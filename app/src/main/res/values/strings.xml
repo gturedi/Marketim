@@ -9,4 +9,5 @@
     <string name="required">Boş bırakmayınız</string>
     <string name="ordersBtn">Siparişlerim</string>
     <string name="quitBtn">Çıkış Yap</string>
+    <string name="quitMessage">Uygulamadan çıkış yapmak istiyor musunuz?</string>
 </resources>
