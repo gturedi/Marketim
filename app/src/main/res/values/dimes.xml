@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="marginSmall">5dp</dimen>
     <dimen name="marginMedium">10dp</dimen>

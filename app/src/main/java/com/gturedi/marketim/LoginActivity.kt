@@ -11,7 +11,7 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         if (preferenceService.rememberMe) {
-            //startActivity()
+            startActivity(OrdersActivity.create(this))
             return
         }
 
@@ -27,9 +27,9 @@ class LoginActivity : BaseActivity() {
             if (etPassword.text.isEmpty()) etPassword.error = str(R.string.required)
             else etPassword.error = null
 
-            if (etUserName.text.equals(USERNAME) && etPassword.text.equals(PASSWORD)) {
+            if (etUserName.text.toString() == USERNAME && etPassword.text.toString() == PASSWORD) {
                 preferenceService.rememberMe = chcRememberMe.isChecked
-                //startActivity()
+                startActivity(OrdersActivity.create(this))
             }
         }
     }

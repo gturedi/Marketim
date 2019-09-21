@@ -7,4 +7,6 @@
     <string name="loginBtn">Giriş</string>
     <string name="loading">Yükleniyor..</string>
     <string name="required">Boş bırakmayınız</string>
+    <string name="ordersBtn">Siparişlerim</string>
+    <string name="quitBtn">Çıkış Yap</string>
 </resources>
