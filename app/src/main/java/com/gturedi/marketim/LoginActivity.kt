@@ -5,6 +5,13 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {
 
+    /*
+        you could also check my other projects and blog:
+        - https://github.com/gturedi/StatefulLayout
+        - https://github.com/gturedi/nytimes-api-sample
+        - http://gturedi.blogspot.com/
+     */
+
     private val preferenceService by lazy { PreferencesService(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

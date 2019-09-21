@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="@dimen/marginLarge"
     >
 
     <LinearLayout
+        android:id="@+id/lnrItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -106,7 +108,7 @@
         </LinearLayout>
 
     </LinearLayout>
-
+cccece
     <RelativeLayout
         android:id="@+id/rlvDetail"
         android:layout_width="match_parent"
@@ -114,6 +116,8 @@
         android:layout_marginTop="@dimen/marginMedium"
         android:padding="@dimen/marginSmall"
         android:background="@color/detailBg"
+        android:visibility="gone"
+        tools:visibility="visible"
         >
 
         <TextView
@@ -139,7 +143,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#cccece"
+            android:background="@color/separator"
             android:layout_below="@id/tvOrderDetail"
             android:layout_alignStart="@id/tvOrderDetail"
             />
