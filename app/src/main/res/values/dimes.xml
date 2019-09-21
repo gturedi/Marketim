@@ -3,4 +3,5 @@
     <dimen name="marginSmall">5dp</dimen>
     <dimen name="marginMedium">10dp</dimen>
     <dimen name="marginLarge">16dp</dimen>
+    <dimen name="marginXLarge">22dp</dimen>
 </resources>
