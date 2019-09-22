@@ -26,7 +26,7 @@
             >
 
             <TextView
-                android:id="@+id/tvMonthNo"
+                android:id="@+id/tvDayNo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
@@ -70,6 +70,7 @@
                 android:id="@+id/tvOrderName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 tools:text="Sabun"
                 />
 
@@ -100,6 +101,7 @@
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/marginMedium"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 tools:text="25 TL"
@@ -135,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/marginMedium"
             android:textStyle="bold"
             android:textColor="@color/black"
             tools:text="15 TL"
@@ -146,6 +149,7 @@
             android:background="@color/separator"
             android:layout_below="@id/tvOrderDetail"
             android:layout_alignStart="@id/tvOrderDetail"
+            android:layout_alignEnd="@id/tvSummaryPrice"
             />
 
     </RelativeLayout>

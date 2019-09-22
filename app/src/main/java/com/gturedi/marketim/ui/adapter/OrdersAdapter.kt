@@ -6,11 +6,13 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.gturedi.marketim.R
 import com.gturedi.marketim.service.OrderModel
+import com.gturedi.marketim.util.color
 import com.gturedi.marketim.util.hide
 import com.gturedi.marketim.util.inflate
 import com.gturedi.marketim.util.show
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_order.*
+import java.text.DateFormatSymbols
 
 // created by @gturedi at 9/22/19
 class OrdersAdapter(val items: List<OrderModel>) :
@@ -27,11 +29,12 @@ class OrdersAdapter(val items: List<OrderModel>) :
         RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bind(item: OrderModel) {
-            tvMonthNo.text = item.date.toString()
-            tvMonthName.text = item.month.toString()
+            tvDayNo.text = item.date.toString().padStart(2, '0')
+            tvMonthName.text = DateFormatSymbols().months[item.month-1]
             tvMarketName.text = item.marketName
             tvOrderName.text = item.orderName
-            tvState.text = item.productState
+            tvState.text = ">> " + item.productState.text
+            tvState.setTextColor(tvState.color(item.productState.getColor()))
             tvPrice.text = item.productPrice.toString()
             tvOrderDetail.text = item.productDetail.orderDetail
             tvSummaryPrice.text = item.productDetail.summaryPrice.toString()
