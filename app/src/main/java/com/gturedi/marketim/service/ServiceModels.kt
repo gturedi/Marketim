@@ -14,3 +14,8 @@ class ProductModel(
     val orderDetail: String,
     val summaryPrice: Double
 )
+
+sealed class OrdersResponseState {
+    data class Error(val throwable: Throwable) : OrdersResponseState()
+    data class Data(val list: List<OrderModel>) : OrdersResponseState()
+}
