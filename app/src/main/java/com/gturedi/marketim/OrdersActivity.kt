@@ -27,6 +27,30 @@ class OrdersActivity : BaseActivity() {
                 }
                 .show()
         }
+
+        sendRequest()
+    }
+
+    private fun sendRequest() {
+        showLoading()
+        OrdersService().getItemsAsync(object : ResponseListener<List<OrderModel>> {
+            override fun onSuccess(data: List<OrderModel>) {
+                hideLoading()
+                rvItems.adapter = OrdersAdpater(data)
+            }
+
+            override fun onFailure(e: Throwable) {
+                hideLoading()
+                AlertDialog.Builder(this@OrdersActivity)
+                    .setMessage(e.message)
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setPositiveButton(android.R.string.ok) { _, _ ->
+                        sendRequest()
+                    }
+                    .show()
+            }
+
+        })
     }
 
 }

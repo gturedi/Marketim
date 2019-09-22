@@ -5,6 +5,8 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -25,8 +27,8 @@ class OrdersAdpater(val items: List<OrderModel>) :
     class CustomViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
 
-        val lnrItem: TextView = view.findViewById(R.id.lnrItem)
-        val rlvDetail: TextView = view.findViewById(R.id.rlvDetail)
+        val lnrItem: LinearLayout = view.findViewById(R.id.lnrItem)
+        val rlvDetail: RelativeLayout = view.findViewById(R.id.rlvDetail)
         val tvMonthNo: TextView = view.findViewById(R.id.tvMonthNo)
         val tvMonthName: TextView = view.findViewById(R.id.tvMonthName)
         val tvMarketName: TextView = view.findViewById(R.id.tvMarketName)
