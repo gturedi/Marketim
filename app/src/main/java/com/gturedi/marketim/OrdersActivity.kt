@@ -36,7 +36,7 @@ class OrdersActivity : BaseActivity() {
         OrdersService().getItemsAsync(object : ResponseListener<List<OrderModel>> {
             override fun onSuccess(data: List<OrderModel>) {
                 hideLoading()
-                rvItems.adapter = OrdersAdpater(data)
+                rvItems.adapter = OrdersAdapter(data)
             }
 
             override fun onFailure(e: Throwable) {
