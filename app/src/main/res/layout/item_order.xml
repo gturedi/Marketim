@@ -5,8 +5,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_marginTop="@dimen/marginLarge"
+    android:orientation="vertical"
     >
 
     <LinearLayout
@@ -74,13 +74,30 @@
                 tools:text="Sabun"
                 />
 
-            <TextView
-                android:id="@+id/tvState"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                tools:text="Yolda"
-                />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+                <View
+                    android:id="@+id/vwState"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="@dimen/marginMedium"
+                    android:background="@color/statePreparing"
+                    />
+
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    tools:text="Hazırlanıyor"
+                    />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -102,8 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/marginMedium"
-                android:textStyle="bold"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 tools:text="25 TL"
                 />
 
@@ -116,8 +133,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginMedium"
-        android:padding="@dimen/marginSmall"
         android:background="@color/detailBg"
+        android:padding="@dimen/marginSmall"
         android:visibility="gone"
         tools:visibility="visible"
         >
@@ -138,18 +155,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/marginMedium"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:textStyle="bold"
             tools:text="15 TL"
             />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/separator"
             android:layout_below="@id/tvOrderDetail"
             android:layout_alignStart="@id/tvOrderDetail"
             android:layout_alignEnd="@id/tvSummaryPrice"
+            android:background="@color/separator"
             />
 
     </RelativeLayout>

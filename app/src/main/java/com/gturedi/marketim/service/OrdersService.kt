@@ -27,10 +27,10 @@ object OrdersService {
 
         val response = client.newCall(request).execute()
 
-        if (!response.isSuccessful) throw IllegalStateException("err:" + response.code)
+        if (!response.isSuccessful) throw IllegalStateException("err:" + response.code())
 
         val listType = object : TypeToken<List<OrderModel>>() {}.type
-        return Gson().fromJson(response.body?.string(), listType)
+        return Gson().fromJson(response.body()?.string(), listType)
     }
 
 }

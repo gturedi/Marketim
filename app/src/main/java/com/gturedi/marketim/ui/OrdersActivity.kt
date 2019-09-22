@@ -11,7 +11,9 @@ import com.gturedi.marketim.R
 import com.gturedi.marketim.service.OrdersResponseState
 import com.gturedi.marketim.service.PreferencesService
 import com.gturedi.marketim.ui.adapter.OrdersAdapter
+import com.gturedi.marketim.util.str
 import kotlinx.android.synthetic.main.activity_orders.*
+import timber.log.Timber
 import java.net.UnknownHostException
 
 class OrdersActivity : BaseActivity() {
@@ -28,7 +30,10 @@ class OrdersActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_orders)
 
+        title = str(R.string.app_name).toUpperCase()
+
         btnQuit.setOnClickListener {
+            Timber.i("btnQuitClicked")
             AlertDialog.Builder(this)
                 .setTitle(R.string.quitBtn)
                 .setMessage(R.string.quitMessage)
@@ -41,11 +46,13 @@ class OrdersActivity : BaseActivity() {
         }
 
         viewModel.items.observe(this, Observer { result ->
+            Timber.i("loginResult:" + result)
             hideLoading()
-            when(result) {
+            when (result) {
                 is OrdersResponseState.Data -> rvItems.adapter = OrdersAdapter(result.list)
                 is OrdersResponseState.Error -> {
-                    val msg = if (result.throwable is UnknownHostException) R.string.connectionErrorMessage else R.string.generalErrorMessage
+                    val msg =
+                        if (result.throwable is UnknownHostException) R.string.connectionErrorMessage else R.string.generalErrorMessage
                     AlertDialog.Builder(this@OrdersActivity)
                         .setMessage(msg)
                         .setCancelable(false)

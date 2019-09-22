@@ -33,8 +33,9 @@ class OrdersAdapter(val items: List<OrderModel>) :
             tvMonthName.text = DateFormatSymbols().months[item.month-1]
             tvMarketName.text = item.marketName
             tvOrderName.text = item.orderName
-            tvState.text = ">> " + item.productState.text
+            tvState.text = item.productState.text
             tvState.setTextColor(tvState.color(item.productState.getColor()))
+            vwState.setBackgroundColor(tvState.color(item.productState.getColor()))
             tvPrice.text = item.productPrice.toString()
             tvOrderDetail.text = item.productDetail.orderDetail
             tvSummaryPrice.text = item.productDetail.summaryPrice.toString()

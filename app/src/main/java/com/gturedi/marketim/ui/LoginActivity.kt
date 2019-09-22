@@ -10,6 +10,7 @@ import com.gturedi.marketim.util.USERNAME
 import com.gturedi.marketim.util.str
 import com.gturedi.marketim.util.toast
 import kotlinx.android.synthetic.main.activity_login.*
+import timber.log.Timber
 
 class LoginActivity : BaseActivity() {
 
@@ -30,7 +31,9 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (viewModel.checkRememberMe()) {
+        val checkRememberMe = viewModel.checkRememberMe()
+        Timber.i("checkRememberMe:" + checkRememberMe)
+        if (checkRememberMe) {
             startActivity(OrdersActivity.create(this))
             return
         }
@@ -42,13 +45,19 @@ class LoginActivity : BaseActivity() {
         etPassword.setText(PASSWORD)
 
         btnLogin.setOnClickListener {
+            Timber.i("btnLoginClicked")
             if (etUserName.text.isEmpty()) etUserName.error = str(R.string.required)
             else etUserName.error = null
 
             if (etPassword.text.isEmpty()) etPassword.error = str(R.string.required)
             else etPassword.error = null
 
-            if (viewModel.login(etUserName.text.toString(), etPassword.text.toString(), chcRememberMe.isChecked)) {
+            if (viewModel.login(
+                    etUserName.text.toString(),
+                    etPassword.text.toString(),
+                    chcRememberMe.isChecked
+                )
+            ) {
                 startActivity(OrdersActivity.create(this))
             } else {
                 toast(R.string.wrongUserOrPass)
