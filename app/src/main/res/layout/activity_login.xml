@@ -9,7 +9,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/marginXLarge"
-    tools:context=".LoginActivity"
+    tools:context=".ui.LoginActivity"
     >
 
     <TextView

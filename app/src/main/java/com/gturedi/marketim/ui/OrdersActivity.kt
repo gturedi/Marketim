@@ -1,9 +1,16 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.ui
 
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import com.gturedi.marketim.BaseActivity
+import com.gturedi.marketim.ui.adapter.OrdersAdapter
+import com.gturedi.marketim.R
+import com.gturedi.marketim.service.OrderModel
+import com.gturedi.marketim.service.OrdersService
+import com.gturedi.marketim.service.PreferencesService
+import com.gturedi.marketim.service.ResponseListener
 import kotlinx.android.synthetic.main.activity_orders.*
 
 class OrdersActivity : BaseActivity() {
@@ -33,7 +40,8 @@ class OrdersActivity : BaseActivity() {
 
     private fun sendRequest() {
         showLoading()
-        OrdersService().getItemsAsync(object : ResponseListener<List<OrderModel>> {
+        OrdersService().getItemsAsync(object :
+            ResponseListener<List<OrderModel>> {
             override fun onSuccess(data: List<OrderModel>) {
                 hideLoading()
                 rvItems.adapter = OrdersAdapter(data)

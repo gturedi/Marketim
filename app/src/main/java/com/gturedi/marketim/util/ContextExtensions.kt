@@ -1,4 +1,4 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.util
 
 import android.content.Context
 import android.widget.Toast

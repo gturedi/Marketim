@@ -1,9 +1,11 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.service
 
 import android.os.Handler
 import android.os.Looper
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.gturedi.marketim.BuildConfig
+import com.gturedi.marketim.util.SERVICE_URL
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.IOException

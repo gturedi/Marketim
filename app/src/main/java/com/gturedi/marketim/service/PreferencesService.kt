@@ -1,4 +1,4 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.service
 
 import android.content.Context
 

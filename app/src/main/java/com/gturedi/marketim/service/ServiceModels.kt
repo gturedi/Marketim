@@ -1,4 +1,4 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.service
 
 data class OrderModel(
     val date: Int,

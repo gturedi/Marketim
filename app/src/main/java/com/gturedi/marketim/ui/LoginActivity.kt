@@ -1,6 +1,12 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.ui
 
 import android.os.Bundle
+import com.gturedi.marketim.BaseActivity
+import com.gturedi.marketim.R
+import com.gturedi.marketim.service.PreferencesService
+import com.gturedi.marketim.util.PASSWORD
+import com.gturedi.marketim.util.USERNAME
+import com.gturedi.marketim.util.str
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {

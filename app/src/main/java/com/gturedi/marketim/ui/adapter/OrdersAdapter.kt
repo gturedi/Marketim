@@ -1,9 +1,14 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.ui.adapter
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.gturedi.marketim.R
+import com.gturedi.marketim.service.OrderModel
+import com.gturedi.marketim.util.hide
+import com.gturedi.marketim.util.inflate
+import com.gturedi.marketim.util.show
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_order.*
 
@@ -11,7 +16,8 @@ import kotlinx.android.synthetic.main.item_order.*
 class OrdersAdapter(val items: List<OrderModel>) :
     RecyclerView.Adapter<OrdersAdapter.CustomViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = CustomViewHolder(parent.inflate(R.layout.item_order))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        CustomViewHolder(parent.inflate(R.layout.item_order))
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) = holder.bind(items[position])
 

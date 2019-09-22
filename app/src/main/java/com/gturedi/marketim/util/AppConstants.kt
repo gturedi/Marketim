@@ -1,4 +1,4 @@
-package com.gturedi.marketim
+package com.gturedi.marketim.util
 
 // created by @gturedi at 9/20/19
 
