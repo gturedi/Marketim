@@ -5,10 +5,9 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.item_order.*
 
 
 // created by @gturedi at 9/22/19
@@ -24,19 +23,8 @@ class OrdersAdpater(val items: List<OrderModel>) :
 
     override fun getItemCount() = items.size
 
-    class CustomViewHolder(view: View) :
-        RecyclerView.ViewHolder(view) {
-
-        val lnrItem: LinearLayout = view.findViewById(R.id.lnrItem)
-        val rlvDetail: RelativeLayout = view.findViewById(R.id.rlvDetail)
-        val tvMonthNo: TextView = view.findViewById(R.id.tvMonthNo)
-        val tvMonthName: TextView = view.findViewById(R.id.tvMonthName)
-        val tvMarketName: TextView = view.findViewById(R.id.tvMarketName)
-        val tvOrderName: TextView = view.findViewById(R.id.tvOrderName)
-        val tvState: TextView = view.findViewById(R.id.tvState)
-        val tvPrice: TextView = view.findViewById(R.id.tvPrice)
-        val tvOrderDetail: TextView = view.findViewById(R.id.tvOrderDetail)
-        val tvSummaryPrice: TextView = view.findViewById(R.id.tvSummaryPrice)
+    class CustomViewHolder(override val containerView: View) :
+        RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bind(item: OrderModel) {
             tvMonthNo.text = item.date.toString()
