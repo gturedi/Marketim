@@ -13,4 +13,5 @@
     <string name="connectionErrorMessage">Lütfen cihazınızın internet bağlantısı olduğundan emin olunuz</string>
     <string name="generalErrorMessage">İşlem sırasında bir hata oluştu!</string>
     <string name="tryAgain">Tekrar Dene</string>
+    <string name="wrongUserOrPass">Kullanıcı adı ve şifre hatalı</string>
 </resources>
