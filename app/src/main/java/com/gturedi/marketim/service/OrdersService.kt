@@ -41,7 +41,7 @@ class OrdersService {
 
             override fun onFailure(call: Call, e: IOException) {
                 runOnMainThread {
-                    listener.onFailure(IllegalStateException(e))
+                    listener.onFailure(e)
                 }
             }
         })

@@ -10,4 +10,7 @@
     <string name="ordersBtn">Siparişlerim</string>
     <string name="quitBtn">Çıkış Yap</string>
     <string name="quitMessage">Uygulamadan çıkış yapmak istiyor musunuz?</string>
+    <string name="connectionErrorMessage">Lütfen cihazınızın internet bağlantısı olduğundan emin olunuz</string>
+    <string name="generalErrorMessage">İşlem sırasında bir hata oluştu!</string>
+    <string name="tryAgain">Tekrar Dene</string>
 </resources>
