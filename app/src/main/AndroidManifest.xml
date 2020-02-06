@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.OrdersActivity" />
+        <activity android:name=".login2.LoginActivity2" />
     </application>
 
 </manifest>

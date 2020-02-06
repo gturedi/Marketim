@@ -22,6 +22,9 @@ class OrdersViewModel : ViewModel() {
             }
             items.postValue(result)
         }
+        viewModelScope.launch(Dispatchers.IO) {
+
+        }
     }
 
 }

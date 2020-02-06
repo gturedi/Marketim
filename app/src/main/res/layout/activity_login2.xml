@@ -1,0 +1,80 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.gturedi.marketim.login2.LoginViewModel2" />
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/marginXLarge"
+        tools:context=".ui.LoginActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginTitle"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/marginMedium"
+            android:background="@drawable/login_edit_bg"
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:layout_marginTop="70dp"
+            android:hint="@string/userName"
+            android:singleLine="true"
+            android:text="@={vm.username}"
+            />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/marginMedium"
+            android:background="@drawable/login_edit_bg"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:hint="@string/password"
+            android:singleLine="true"
+            android:text="@={vm.password}"
+            />
+
+        <CheckBox
+            android:id="@+id/chcRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rememberMe"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:layout_gravity="left"
+            android:checked="@={vm.rememberMe}"
+            />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_bg"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:textColor="@color/white"
+            android:text="@string/loginBtn"
+            android:textAllCaps="false"
+            android:onClick="@{() -> vm.login()}"
+            />
+
+    </LinearLayout>
+
+</layout>

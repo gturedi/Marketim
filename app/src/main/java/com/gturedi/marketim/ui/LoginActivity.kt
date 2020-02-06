@@ -1,12 +1,13 @@
 package com.gturedi.marketim.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.gturedi.marketim.BaseActivity
+import com.gturedi.marketim.BuildConfig
 import com.gturedi.marketim.R
+import com.gturedi.marketim.login2.LoginActivity2
 import com.gturedi.marketim.service.PreferencesService
-import com.gturedi.marketim.util.PASSWORD
-import com.gturedi.marketim.util.USERNAME
 import com.gturedi.marketim.util.str
 import com.gturedi.marketim.util.toast
 import kotlinx.android.synthetic.main.activity_login.*
@@ -41,8 +42,13 @@ class LoginActivity : BaseActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_login)
 
-        etUserName.setText(USERNAME)
-        etPassword.setText(PASSWORD)
+        if (BuildConfig.DEBUG) {
+            //etUserName.setText(USERNAME)
+            //etPassword.setText(PASSWORD)
+            startActivity(Intent(this, LoginActivity2::class.java))
+            finish()
+            return
+        }
 
         btnLogin.setOnClickListener {
             Timber.i("btnLoginClicked")

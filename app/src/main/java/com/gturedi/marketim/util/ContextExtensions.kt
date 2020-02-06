@@ -8,5 +8,8 @@ import androidx.annotation.StringRes
 fun Context.toast(@StringRes message: Int) =
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
+fun Context.toast(message: String) =
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
 fun Context.str(@StringRes resId: Int) =
     this.getString(resId)
